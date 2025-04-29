@@ -1,0 +1,106 @@
+body {
+    font-family: 'Press Start 2P', cursive;
+    background: linear-gradient(to right, #ff8a00, #e52e71);
+    margin: 0;
+    padding: 20px;
+    animation: shake 0.5s infinite; /* 新加：页面抖动 */
+}
+
+.back-link {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 12px;
+    text-decoration: none;
+    background-color: black;
+    color: white;
+    padding: 5px;
+}
+
+h1 {
+    position: absolute;
+    top: 50px;
+    left: 100px;
+}
+
+video {
+    position: absolute;
+    top: 200px;
+    left: 150px;
+}
+
+.audio, video {
+    display: block;
+    margin-bottom: 20px;
+}
+
+.ascii-art {
+    font-family: monospace;
+    white-space: pre;
+    font-size: 16px;
+    margin-top: 400px;
+}
+
+.repetition {
+    margin-top: 20px;
+    font-size: 20px;
+    animation: blink 1s infinite;
+    background-image: url('../assets/image/sample.gif');
+    background-size: cover;
+    color: white;
+}
+
+.highlight {
+    color: red;
+}
+.highlight2 {
+    color: blue;
+}
+.highlight3 {
+    color: green;
+}
+
+h1, .ascii-art, .repetition {
+    font-size: 5vw;
+}
+
+/* --- 新加：乱飞色块div --- */
+.crazy-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: repeating-linear-gradient(
+        45deg,
+        rgba(255,0,0,0.5),
+        rgba(255,0,0,0.5) 10px,
+        rgba(0,255,0,0.5) 10px,
+        rgba(0,255,0,0.5) 20px
+    );
+    z-index: -1;
+    animation: moveBackground 5s linear infinite;
+}
+
+/* 背景疯狂动 */
+@keyframes moveBackground {
+    0% {background-position: 0 0;}
+    50% {background-position: 500px 500px;}
+    100% {background-position: 0 0;}
+}
+
+/* 页面整体抖动 */
+@keyframes shake {
+    0% {transform: translate(0, 0);}
+    25% {transform: translate(5px, -5px);}
+    50% {transform: translate(-5px, 5px);}
+    75% {transform: translate(5px, 5px);}
+    100% {transform: translate(0, 0);}
+}
+
+/* blink闪烁 */
+@keyframes blink {
+    0% {opacity: 1;}
+    50% {opacity: 0;}
+    100% {opacity: 1;}
+}
